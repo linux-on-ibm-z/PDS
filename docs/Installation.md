@@ -7,7 +7,7 @@ _**NOTE:**_
 
 ### Step 1: Install prerequisite
 
-* For SLES (11 SP4, 12, 12 SP1, 12 SP2):
+* For SLES (11 SP4, 12):
 
         sudo zypper install -y python python-setuptools gcc git libffi-devel python-devel openssl openssl-devel cronie python-xml pyxml tar wget aaa_base which w3m
         sudo easy_install pip
@@ -21,7 +21,9 @@ _**NOTE:**_
 
 * For SLES (12 SP1, 12 SP2):
 
-        sudo zypper install -y apache2 apache2-devel apache2-worker apache2-mod_wsgi
+        sudo zypper install -y python python-setuptools gcc git libffi-devel python-devel openssl openssl-devel cronie python-xml pyxml tar wget aaa_base which w3m apache2 apache2-devel apache2-worker apache2-mod_wsgi
+        sudo easy_install pip
+        sudo pip install 'cryptography==1.4' Flask launchpadlib simplejson logging
 
 * if "/usr/local/bin" is not part of $PATH add it to the path:
 
@@ -79,13 +81,14 @@ Note: In case PDS code is already checked out, do the following for latest updat
         sudo useradd apache
         sudo groupadd apache
 
-    #### Enable authorization module in apache configuration
+    #### Enable authorization module in apache configuration(Only for SLES 12 SP1, 12 SP2)
 
         sudo a2enmod mod_access_compat
 
     #### Set appropriate folder and file permission on /opt/PDS/ folder for apache
 
         sudo chown -R apache:apache /opt/PDS/
+
 
     #### Start/Restart Apache service
 
@@ -136,3 +139,4 @@ In case any of the parameters are updated, the server neds to be restarted:
     #### Start the Flask server as below
 
         sudo service pds start
+
