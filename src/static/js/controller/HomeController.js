@@ -10,6 +10,7 @@ var HomeController = function($scope) {
 
     // List of supported OS and versions
     $scope.supported_oses_list = [];
+    $scope.supported_oses_list_keys = [];
     $scope.disclaimer_page = { name: 'disclaimer', url: '/static/js/views/disclaimer.html'};
     $scope.page_size = 10;
     $scope.number_of_items = 10;
@@ -30,7 +31,10 @@ var HomeController = function($scope) {
                 console.log(e);
                 $scope.supported_oses_list = data;
             }
-                $scope.$apply();
+
+            $scope.supported_oses_list_keys = Object.keys($scope.supported_oses_list);
+            $scope.$apply();
+
             },
             failure: function(data){
                 console.log("Not able to fetch Supported Distros information.");                
@@ -125,18 +129,23 @@ var HomeController = function($scope) {
         $scope.fetchPackages(null, $scope.exact_match, $scope.page_size, 0);
     };
     
-    $scope.checkAll = function(os_object, my_name){
-        if (!my_name){
-            var os_name = os_object.name;
-            var should_check = $('#'+$scope.textToVariableNaming(os_name)+'__all').prop("checked");
-            for (i in os_object.versions){
-                var child_id = $scope.textToVariableNaming(os_name) + '__' + $scope.textToVariableNaming(os_object.versions[i]);
-                $('#'+child_id.toString().replace('.', '_')).prop("checked", should_check);
+    $scope.checkAll = function(distro_type, my_name){
+        if (distro_type === undefined){
+            var should_check = $('#check__all').prop("checked");
+            // this section addresses parent check all
+            for(distro_type in $scope.supported_oses_list){
+                $('#'+ distro_type +'__all').prop("checked", should_check);
+                for(distro_version in $scope.supported_oses_list[distro_type]){
+                    console.log(distro_version);
+                    $('#'+$scope.textToVariableNaming(distro_version)).prop("checked", should_check);
+                }
             }
         }else{
-            for(i in os_object){
-                $('#'+$scope.textToVariableNaming(os_object[i].name)+'__all').prop("checked", $('#check__all').prop("checked"));
-                $scope.checkAll(os_object[i]);
+            // It means distro specific check-all
+            var should_check_specific = $('#'+ distro_type +'__all').prop("checked");
+            for(distro_version in $scope.supported_oses_list[distro_type]){
+                console.log(distro_version);
+                $('#'+$scope.textToVariableNaming(distro_version)).prop("checked", should_check_specific);
             }
         }       
     };
@@ -162,7 +171,7 @@ var HomeController = function($scope) {
             $scope.sort_reverse = 0;
         }
 
-        bit_search = $scope.generateBitRepresentation(json_data);
+        bit_search = $scope.updateSearchBit();
         $scope.page_number = ($scope.page_number <= 0)? 1: $scope.page_number;
         package_name = (json_data.length > 0) ? json_data[0].package_name: '';
         new_url = 'getPackagesFromURL?page_size='+$scope.page_size+'&sort_key='+$scope.sort_key+'&reverse='+ $scope.sort_reverse +'&page_number='+$scope.page_number+'&exact_match='+ $scope.exact_match +'&package_name='+package_name+'&search_string='+bit_search;
@@ -227,29 +236,17 @@ var HomeController = function($scope) {
           });
     };
 
-    $scope.generateBitRepresentation = function(package_search_info){
-        distro_bit_search_mapping = {
-            'UBUNTU_17.04': '0',
-            'UBUNTU_16.10': '0',
-            'UBUNTU_16.04': '0',
-            'SUSE_LINUX_ENTERPRISE_SERVER_12_SP2': '0',
-            'SUSE_LINUX_ENTERPRISE_SERVER_12_SP1': '0',
-            'SUSE_LINUX_ENTERPRISE_SERVER_11_SP4': '0'
-        };
-
-        for(var i = 0; i < package_search_info.length; i++){
-            distro_name = package_search_info[i].name.toUpperCase();
-            distro_version = package_search_info[i].version;
-            distro_bit_search_mapping[distro_name + '_' + distro_version] = '1';
+    $scope.updateSearchBit = function(){
+        var search_bit_rep = 0;
+        for(distro_type in $scope.supported_oses_list){
+            for(distro in $scope.supported_oses_list[distro_type]){
+                if($('#'+$scope.textToVariableNaming(distro)).prop("checked")){
+                    console.log($scope.supported_oses_list[distro_type][distro]);
+                    search_bit_rep += $scope.supported_oses_list[distro_type][distro];
+                }
+            }
         }
-
-        var distro_bit_search_mapping_vals = Object.keys(distro_bit_search_mapping).map(function(e) {
-            return distro_bit_search_mapping[e]
-        });
-
-        distro_bit_search_mapping_vals = parseInt(distro_bit_search_mapping_vals.join(''), 2);
-
-        return distro_bit_search_mapping_vals;
+        return search_bit_rep;
     };
 
     $scope.setEmptyMessage = function(msg){   
@@ -345,8 +342,6 @@ var HomeController = function($scope) {
                 }else{
                     self.version = this.id.split('__')[1].replace('_','.');
                 }
-                self.arch = 's390x';
-                self.search_name = '';
                 self.package_name = encodeURIComponent($scope.package_name);
                 if(self.name == 'Ubuntu'){
                     self.alt_name = $scope.ubuntu_mapping[this.id.split('__')[1].replace('_','.')];
@@ -363,8 +358,15 @@ var HomeController = function($scope) {
         $scope.fetchDataFromUrl($scope.formatString($scope.selected_distros));
     };
 
+    $scope.readableDistroName = function(distro_name){
+        return distro_name.replace(/__/, ' ').replace(/_/g,' ');
+    };
+
     $scope.textToVariableNaming = function(distro_name){
-        return distro_name.replace(/ /g, '_');
+        if(!distro_name.startsWith('SUSE')){
+            return distro_name.replace(/\./g, '_');
+        }
+        return distro_name;
     };
 
     $scope.getPages = function(){
