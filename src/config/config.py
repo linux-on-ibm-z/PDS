@@ -4,8 +4,6 @@ import logging
 
 DATA_FILE_LOCATION = '/opt/PDS/src/distro_data'
 LOG_FILE_LOCATION = '/opt/PDS/log/pds.log'
-DATA_FILE_LOCATION = 'c:/Users/ryan_dmello/workspace/PDS_EXT/src/distro_data'
-LOG_FILE_LOCATION = 'c:/Users/ryan_dmello/workspace/PDS_EXT/log/pds.log'
 MIN_DATA_FILE_SIZE = 50000
 MAX_RECORDS_TO_CONCAT = 5000
 
