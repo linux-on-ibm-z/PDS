@@ -1,4 +1,4 @@
-# Adding new distributions to the tool:
+# Adding new distributions to the tool
 
 This documents details the steps to be performed in order to add a distribution support to PDS tool. 
 
@@ -6,7 +6,7 @@ _**General Notes:**_
 
 * _A directory `/<pds_root>/` will be referred to in these instructions. This is a temporary writable directory anywhere you'd like to place it. For e.g. it can be set to `/opt/PDS/`_
 
-### 1. Create a JSON file with package data:
+### 1. Create a JSON file with package data
 
 All the distribution specific data files need to be added in the folder `/<pds_root>/distro_data`. 
 
@@ -60,7 +60,7 @@ The Content of the distribution data JSON file needs to be in format below:
 }]
 ```
 
-### 2. Make an entry in the configuration file `/<pds_root>/src/config/config.py` as below:
+### 2. Make an entry in the configuration file `/<pds_root>/src/config/config.py` as below
 The entry in the configuration file is to help generate a cache file `/<pds_root>/distro_data/cached_data.json` which will be then loaded by the server while starting and used for processing requests.
 
 ```diff
