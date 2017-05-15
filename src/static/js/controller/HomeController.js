@@ -20,6 +20,7 @@ var HomeController = function($scope) {
     $scope.distro_selected = false;
     $scope.display_column_list = [];
     $scope.prev_url = '';
+    $scope.selected_distros = [];
     
     // Get the package information data from the server and process it for display
     $.ajax({
@@ -136,7 +137,6 @@ var HomeController = function($scope) {
             for(distro_type in $scope.supported_oses_list){
                 $('#'+ distro_type +'__all').prop("checked", should_check);
                 for(distro_version in $scope.supported_oses_list[distro_type]){
-                    console.log(distro_version);
                     $('#'+$scope.textToVariableNaming(distro_version)).prop("checked", should_check);
                 }
             }
@@ -144,7 +144,6 @@ var HomeController = function($scope) {
             // It means distro specific check-all
             var should_check_specific = $('#'+ distro_type +'__all').prop("checked");
             for(distro_version in $scope.supported_oses_list[distro_type]){
-                console.log(distro_version);
                 $('#'+$scope.textToVariableNaming(distro_version)).prop("checked", should_check_specific);
             }
         }       
@@ -241,7 +240,6 @@ var HomeController = function($scope) {
         for(distro_type in $scope.supported_oses_list){
             for(distro in $scope.supported_oses_list[distro_type]){
                 if($('#'+$scope.textToVariableNaming(distro)).prop("checked")){
-                    console.log($scope.supported_oses_list[distro_type][distro]);
                     search_bit_rep += $scope.supported_oses_list[distro_type][distro];
                 }
             }
@@ -363,7 +361,7 @@ var HomeController = function($scope) {
     };
 
     $scope.textToVariableNaming = function(distro_name){
-        if(!distro_name.startsWith('SUSE')){
+        if(!distro_name.indexOf('SUSE') == 0){
             return distro_name.replace(/\./g, '_');
         }
         return distro_name;
@@ -390,8 +388,7 @@ var HomeController = function($scope) {
     };
 
     $scope.getDistroVersion = function(distro, supported_os_name){
-        supported_os_name = $scope.textToVariableNaming(supported_os_name.toLowerCase());
-        distro_versions = distro[supported_os_name.toUpperCase()];
+        distro_versions = distro[supported_os_name];
         if (distro_versions && supported_os_name == 'suse_linux_enterprise_server'){
             return distro_versions.join('/').replace(/-/g, ' ');
         }else if (distro_versions){

@@ -78,7 +78,7 @@
                                 <!-- Create Distro columns based on selected unique distros flavors -->
                                 <th>Package Name&nbsp;<a href="javascript:void(0);" ng-click="sort_by('name', $event, exact_match, page_size, page_count)"><i name="package_name" title="Sort Descending" class="sorting-arrows fa fa-fw fa-sort-desc"></i></a></th>
                                 <th>Version</th>
-                                <th ng-repeat="supported_oses in display_column_list">{{ supported_oses.display_name }}&nbsp;
+                                <th ng-repeat="supported_oses in display_column_list">{{ readableDistroName(supported_oses.display_name) }}&nbsp;
                                     <a href="javascript:void(0);" ng-click="sort_by(textToVariableNaming(supported_oses.name.toLowerCase()), $event, exact_match, page_size, page_count)">
                                         <i name="package_{{ textToVariableNaming(supported_oses.name.toLowerCase()) }}"></i>
                                     </a>

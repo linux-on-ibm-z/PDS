@@ -152,16 +152,14 @@ class PackageSearch:
                 if len(distro_info) > 1:
                     distro_name = distro_info[0]
                     distro_version = distro_info[1:len(distro_info)]
-                    if distro_name.startswith('SUSE'):
+                    if distro_name.startswith('Suse'):
                         distro_name = '_'.join(distro_info[0:4])
                         distro_version = distro_info[4:len(distro_info)]
                         distro_version = '-'.join(distro_version)
                     else:
                         distro_version = '.'.join(distro_version)
 
-                new_distro_name = distro_name.split('_')
-                new_distro_name = '_'.join([i.capitalize() for i in new_distro_name])
-                bit_key = '%s__%s' % (new_distro_name, distro_version)
+                bit_key = '%s__%s' % (distro_name, distro_version)
                 bit_key = bit_key.replace('-', '_')
 
                 for pkg in package_info:
@@ -173,15 +171,15 @@ class PackageSearch:
                         pkg[distro_name] = [distro_version]
                         package_data[pkg_key] = pkg
                         # This block means first time record creation
-                        package_data[pkg_key]['bit_rep_dec'] = DISTROS_WITH_BIT_REP[new_distro_name][bit_key]
+                        package_data[pkg_key]['bit_rep_dec'] = DISTROS_WITH_BIT_REP[distro_name][bit_key]
                     else:
                         if not package_data[pkg_key].has_key(distro_name):
                             package_data[pkg_key][distro_name] = [distro_version]
-                            package_data[pkg_key]['bit_rep_dec'] += DISTROS_WITH_BIT_REP[new_distro_name][bit_key]
+                            package_data[pkg_key]['bit_rep_dec'] += DISTROS_WITH_BIT_REP[distro_name][bit_key]
                         else:
                             if distro_version not in package_data[pkg_key][distro_name]:
                                 package_data[pkg_key][distro_name].append(distro_version)
-                                package_data[pkg_key]['bit_rep_dec'] += DISTROS_WITH_BIT_REP[new_distro_name][bit_key]
+                                package_data[pkg_key]['bit_rep_dec'] += DISTROS_WITH_BIT_REP[distro_name][bit_key]
 
         json_data = package_data.values()
 
