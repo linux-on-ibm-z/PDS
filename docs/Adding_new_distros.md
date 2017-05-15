@@ -12,11 +12,11 @@ All the distribution specific data files need to be added in the folder `/<pds_r
 
 **The data file should be named in following convention in folder `/<pds_root>/distro_data/`:**
 
-    <Some_New_Distro>_<New_distro_version>_Package_List.json
+    <Some_New_Distribution>_<New_Distribution_version>_Package_List.json
 
-`<Some_New_Distro>` - is distribution name in upper case.
+`<Some_New_Distribution>` - is distribution name in upper case.
 
-`<New_distro_version>` - is the distribution version that gets added.
+`<New_Distribution_version>` - is the distribution version that gets added.
 
 **Here's sample file naming:**
 
@@ -64,18 +64,18 @@ The Content of the distribution data JSON file needs to be in format below:
 The entry in the configuration file is to help generate a cache file `/<pds_root>/distro_data/cached_data.json` which will be then loaded by the server while starting and used for processing requests.
 
 ```diff
-@@ -39,6 +39,8 @@ DISTROS_WITH_BIT_REP = {
+@@ -39,6 +39,8 @@ DistributionS_WITH_BIT_REP = {
          'Suse_Linux_Enterprise_Server__11_SP4': 0,
          'Suse_Linux_Enterprise_Server__12_SP1': 0,
          'Suse_Linux_Enterprise_Server__12_SP2': 0
-+    }, '<Some_New_Distro>': {
-+        '<Some_New_Distro>__<New_distro_version >': 0
++    }, '<Some_New_Distribution>': {
++        '<Some_New_Distribution>__<New_Distribution_version >': 0
      }
  }
 ```
-`<Some_New_Distro>` - is distribution name to be added(naming case should be same as mentioned in file name).
+`<Some_New_Distribution>` - is distribution name to be added(naming case should be same as mentioned in file name).
 
-`<distro_version>` - is the distribution version for the new distribution added.
+`<Distribution_version>` - is the distribution version for the new distribution added.
 
 ### 3. Regenerate the cached data file `/<pds_root>/distro_data/cached_data.json`
 Every time a new distribution is added the cache file needs to be regenerated for the new distribution data to be updated into the file. For this the cached file needs to be manually removed and the server needs to be restarted.
