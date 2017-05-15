@@ -6,7 +6,7 @@ _**General Notes:**_
 
 * _A directory `/<pds_root>/` will be referred to in these instructions. This is a temporary writable directory anywhere you'd like to place it. For e.g. it can be set to `/opt/PDS/`_
 
-### 1. Create a JSON file with package data
+### Step 1. Create a JSON file with package data
 
 All the distribution specific data files need to be added in the folder `/<pds_root>/distro_data`. 
 
@@ -14,7 +14,7 @@ All the distribution specific data files need to be added in the folder `/<pds_r
 
     <Some_New_Distribution>_<New_Distribution_version>_Package_List.json
 
-`<Some_New_Distribution>` - is distribution name in upper case.
+`<Some_New_Distribution>` - is distribution name to be added, In case distribution name contains spaces it should be replaced by '_'.
 
 `<New_Distribution_version>` - is the distribution version that gets added.
 
@@ -60,7 +60,7 @@ The Content of the distribution data JSON file needs to be in format below:
 }]
 ```
 
-### 2. Make an entry in the configuration file `/<pds_root>/src/config/config.py` as below
+### Step 2. Make an entry in the configuration file `/<pds_root>/src/config/config.py` as below
 The entry in the configuration file is to help generate a cache file `/<pds_root>/distro_data/cached_data.json` which will be then loaded by the server while starting and used for processing requests.
 
 ```diff
@@ -69,15 +69,15 @@ The entry in the configuration file is to help generate a cache file `/<pds_root
          'Suse_Linux_Enterprise_Server__12_SP1': 0,
          'Suse_Linux_Enterprise_Server__12_SP2': 0
 +    }, '<Some_New_Distribution>': {
-+        '<Some_New_Distribution>__<New_Distribution_version >': 0
++        '<Some_New_Distribution>__<New_Distribution_version>': 0
      }
  }
 ```
-`<Some_New_Distribution>` - is distribution name to be added(naming case should be same as mentioned in file name).
+`<Some_New_Distribution>` - is distribution name to be added(naming case should be same as mentioned in file name of Step 1, In case distribution name contains spaces it should be replaced by '_').
 
-`<Distribution_version>` - is the distribution version for the new distribution added.
+`<New_Distribution_version>` - is the distribution version for the new distribution added(version should be same as mentioned in file name of Step 1).
 
-### 3. Regenerate the cached data file `/<pds_root>/distro_data/cached_data.json`
+### Step 3. Regenerate the cached data file `/<pds_root>/distro_data/cached_data.json`
 Every time a new distribution is added the cache file needs to be regenerated for the new distribution data to be updated into the file. For this the cached file needs to be manually removed and the server needs to be restarted.
 
 ```
