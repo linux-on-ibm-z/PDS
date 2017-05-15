@@ -15,7 +15,7 @@
                     <div ng-hide="toggle" ng-repeat="supported_os_type in supported_oses_list_keys" class="sub_menu_items">
                         <fieldset>
                             <input class="flavor_selection" type="checkbox" id="{{ supported_os_type }}__all" ng-checked="{{ supported_os_type }}__all" ng-click='checkAll(supported_os_type);shouldBeCheckAll($event);' />
-                            <label>{{ supported_os_type }}-All</label>
+                            <label>{{ readableDistroName(supported_os_type) }}-All</label>
                             <div ng-repeat="(os, bit_rep) in supported_oses_list[supported_os_type]">
                                 <input class="flavor_with_version" type="checkbox" id="{{ textToVariableNaming(os) }}" ng-click="shouldBeCheckAll($event);" ng-checked="{{ textToVariableNaming(os) }}" />
                                 <label>{{ readableDistroName(os) }}</label>
@@ -66,7 +66,7 @@
                                 <!-- Create Distro columns based on selected unique distros flavors -->
                                 <th>Package Name&nbsp;<a href="javascript:void(0);" ng-click="sort_by('name', $event, exact_match, page_size, page_count)"><i name="package_name" title="Sort Descending" class="sorting-arrows fa fa-fw fa-sort-desc"></i></a></th>
                                 <th>Version</th>
-                                <th ng-repeat="supported_oses in display_column_list">{{ supported_oses.display_name }}&nbsp;
+                                <th ng-repeat="supported_oses in display_column_list">{{ readableDistroName(supported_oses.display_name) }}&nbsp;
                                     <a href="javascript:void(0);" ng-click="sort_by(textToVariableNaming(supported_oses.name.toLowerCase()), $event, exact_match, page_size, page_count)">
                                         <i name="package_{{ textToVariableNaming(supported_oses.name.toLowerCase()) }}"></i>
                                     </a>
