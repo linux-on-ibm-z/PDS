@@ -106,6 +106,8 @@ _**NOTE:**_
 ###  Step 6: (Optional) Custom configuration
 Following configuration settings can be managed in `/opt/PDS/src/config/config.py`:
 
+        <PDS_BASE> - Base location where PDS is Installed/Cloned. Defaults to `/opt/PDS/`
+
         <DATA_FILE_LOCATION> - Location of folder containing all distribution specific JSON data
         
         <LOG_FILE_LOCATION> - Location of folder containing PDS logs
