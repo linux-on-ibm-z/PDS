@@ -16,9 +16,10 @@ All the distribution specific data files need to be added in the folder `/<pds_r
 
 `<Distribution>` - Name of the distribution to be added for e.g. "Ubuntu"
 
-NOTE: In case distribution name contains spaces it should be replaced by '_'.
+_**Note:**_ 
+In case distribution name contains spaces it should be replaced by '_'.
 
-`<Version>` - Version of the distribution to be supported for e.g. 16.04
+`<Version>` - Version of the distribution to be supported for e.g. 14.04
 
 **Here's sample file naming:**
 
@@ -76,9 +77,11 @@ The entry in the configuration file is to help generate a cache file `/<pds_root
  }
 ```
 `<Distribution>` - Name of the distribution to be added for e.g. "Ubuntu"
-NOTE: In case distribution name contains spaces it should be replaced by '_'.
 
-`<Version>` - is the distribution version for the new distribution added(version should be same as mentioned in file name of Step 1).
+_**Note:**_ 
+In case distribution name contains spaces it should be replaced by '_'.
+
+`<Version>` - Version of the distribution to be supported for e.g. 14.04
 
 ### Step 3. Delete the cached data file `/<pds_root>/distro_data/cached_data.json`
 The system needs to regenerate the cached_data after adding a new distro.  Hence delete the existing cache as follows:
