@@ -4,13 +4,15 @@ This documents details the steps to be performed in order to add a distribution 
 
 _**General Notes:**_ 	
 
-* _A directory `/<pds_root>/` will be referred to in these instructions. This is a temporary writable directory anywhere you'd like to place it. For e.g. it can be set to `/opt/PDS/`_
+ * _A directory `/<DATA_FILE_LOCATION>/` defined in Step 6 of [Installation](Installation.md) document._
+
+ * _A directory `/<PDS_BASE>/` defined in Step 6 of [Installation](Installation.md) document._
 
 ### Step 1. Create a JSON file with package data
 
-All the distribution specific data files need to be added in the folder `/<pds_root>/distro_data`. 
+All the distribution specific data files need to be added in the folder `<DATA_FILE_LOCATION>`. 
 
-**The data file should be named in following convention in folder `/<pds_root>/distro_data/`:**
+**The data file should be named in following convention in folder `<DATA_FILE_LOCATION>`:**
 
     <Distribution>_<Version>_Package_List.json
 
@@ -63,16 +65,16 @@ The Content of the distribution data JSON file needs to be in format below:
 }]
 ```
 
-### Step 2. Make an entry in the configuration file `/<pds_root>/src/config/config.py` as below
-The entry in the configuration file is to help generate a cache file `/<pds_root>/distro_data/cached_data.json` which will be then loaded by the server while starting and used for processing requests.
+### Step 2. Make an entry in the configuration file `/<PDS_BASE>/src/config/config.py` as below
+The entry in the configuration file is to help generate a cache file `<DATA_FILE_LOCATION>/cached_data.json` which will be then loaded by the server while starting and used for processing requests.
 
 ```diff
 @@ -39,6 +39,8 @@ DistributionS_WITH_BIT_REP = {
          'Suse_Linux_Enterprise_Server__11_SP4': 0,
          'Suse_Linux_Enterprise_Server__12_SP1': 0,
          'Suse_Linux_Enterprise_Server__12_SP2': 0
-+    }, '<Some_New_Distribution>': {
-+        '<Some_New_Distribution>__<New_Distribution_version>': 0
++    }, '<Distribution>': {
++        '<Distribution>__<Version>': 0
      }
  }
 ```
@@ -83,11 +85,11 @@ In case distribution name contains spaces it should be replaced by '_'.
 
 `<Version>` - Version of the distribution to be supported for e.g. 14.04
 
-### Step 3. Delete the cached data file `/<pds_root>/distro_data/cached_data.json`
+### Step 3. Delete the cached data file `<DATA_FILE_LOCATION>/cached_data.json`
 The system needs to regenerate the cached_data after adding a new distro.  Hence delete the existing cache as follows:
 
 ```
-cd /<pds_root>/distro_data/
+cd <DATA_FILE_LOCATION>
 rm -f cached_data.json
 ```
 
