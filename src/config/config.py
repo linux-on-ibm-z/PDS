@@ -1,9 +1,9 @@
 import urllib2
 import logging
 
-
-DATA_FILE_LOCATION = '/opt/PDS/src/distro_data'
-LOG_FILE_LOCATION = '/opt/PDS/log/pds.log'
+PDS_BASE = '/opt/PDS/'
+DATA_FILE_LOCATION = '%s/src/distro_data' % PDS_BASE
+LOG_FILE_LOCATION = '%s/log/pds.log' % PDS_BASE
 MIN_DATA_FILE_SIZE = 50000
 MAX_RECORDS_TO_CONCAT = 5000
 
