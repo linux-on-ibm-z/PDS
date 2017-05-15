@@ -2,7 +2,7 @@ import urllib2
 import logging
 
 PDS_BASE = '/opt/PDS/'
-DATA_FILE_LOCATION = '%s/src/distro_data' % PDS_BASE
+DATA_FILE_LOCATION = '%s/distro_data' % PDS_BASE
 LOG_FILE_LOCATION = '%s/log/pds.log' % PDS_BASE
 MIN_DATA_FILE_SIZE = 50000
 MAX_RECORDS_TO_CONCAT = 5000
@@ -52,8 +52,6 @@ def generateDistroBitReps():
         for distro in DISTROS_WITH_BIT_REP[distro_type]:
             DISTROS_WITH_BIT_REP[distro_type][distro] = int(bit_value, 2)
             bit_value += '0'
-
-    print DISTROS_WITH_BIT_REP
 
 generateDistroBitReps()
 # In case application is hosted on server with proxy, set "enable_proxy_authentication = True" in config.py 
