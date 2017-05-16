@@ -304,7 +304,7 @@ var HomeController = function($scope) {
                 }
             });
         }
-        $scope.current_page = page_number;
+        $scope.current_page = (page_number !== undefined)?page_number:1;
         page_size = (page_size === undefined)? $scope.page_size: page_size;
         page_number = (page_number === undefined)? 0: page_number;
         prev_page = $scope.page_number;
