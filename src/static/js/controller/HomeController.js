@@ -166,6 +166,7 @@ var HomeController = function($scope) {
 
         $scope.page_number = ($scope.page_number <= 0)? 1: $scope.page_number;
         package_name = (json_data.length > 0) ? json_data[0].package_name: '';
+        $scope.page_size = ($scope.page_size !== undefined)?$scope.page_size:10;
         new_url = 'getPackagesFromURL?page_size='+$scope.page_size+'&sort_key='+$scope.sort_key+'&reverse='+ $scope.sort_reverse +'&page_number='+$scope.page_number+'&exact_match='+ $scope.exact_match +'&package_name='+package_name+'&search_string='+bit_search;
         if ($scope.prev_url == '' || $scope.prev_url != new_url){
             $scope.prev_url = new_url;
@@ -382,7 +383,7 @@ var HomeController = function($scope) {
         selected_distros = $scope.distroIdToVersionMap[supported_os_name];
 
         distro_version_ids = Object.keys(selected_distros).filter(function(n) {
-            return distro[supported_os_name].indexOf(selected_distros[n]) !== -1;
+            return distro[supported_os_name] && distro[supported_os_name].indexOf(selected_distros[n]) !== -1;
         });
 
         distro_versions = distro_version_ids.map(function(n){
