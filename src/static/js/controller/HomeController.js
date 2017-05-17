@@ -14,7 +14,7 @@ var HomeController = function($scope) {
     $scope.disclaimer_page = { name: 'disclaimer', url: '/static/js/views/disclaimer.html'};
     $scope.page_size = 10;
     $scope.number_of_items = 10;
-    $scope.page_number = 0;
+    $scope.page_number = 1;
     $scope.current_page = 1;
     $scope.page_options = [5, 10, 20,30, 40, 50];
     $scope.distro_selected = false;
@@ -119,7 +119,7 @@ var HomeController = function($scope) {
     $scope.setItemsPerPage = function(num) {
         $scope.page_size = num;
         $scope.currentPage = 1; // reset to first page
-        $scope.fetchPackages(null, $scope.exact_match, $scope.page_size, 0);
+        $scope.fetchPackages(null, $scope.exact_match, $scope.page_size, 1);
     };
     
     $scope.checkAll = function(distro_type, my_name){
