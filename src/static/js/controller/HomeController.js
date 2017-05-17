@@ -42,14 +42,6 @@ var HomeController = function($scope) {
             }
       });
 
-    // Ubuntu version to flavor mapping 
-    $scope.ubuntu_mapping = {
-        '16.04': 'xenial',
-        '15.10': 'wily',
-        '15.04': 'vivid',
-        '14.04': 'trusty'
-    };
-
     if($scope.packages_all === undefined){
         $scope.packages_all = [];
     }
@@ -158,7 +150,7 @@ var HomeController = function($scope) {
         return input_string;
     };
 
-    $scope.fetchDataFromUrl = function(json_data){
+    $scope.fetchDataFromUrl = function(json_data, search_bit_rep){
         if(json_data.length < 1){
             return;
         }
@@ -170,7 +162,8 @@ var HomeController = function($scope) {
             $scope.sort_reverse = 0;
         }
 
-        bit_search = $scope.updateSearchBit();
+        bit_search = (search_bit_rep !== undefined)?search_bit_rep:0;
+
         $scope.page_number = ($scope.page_number <= 0)? 1: $scope.page_number;
         package_name = (json_data.length > 0) ? json_data[0].package_name: '';
         new_url = 'getPackagesFromURL?page_size='+$scope.page_size+'&sort_key='+$scope.sort_key+'&reverse='+ $scope.sort_reverse +'&page_number='+$scope.page_number+'&exact_match='+ $scope.exact_match +'&package_name='+package_name+'&search_string='+bit_search;
@@ -235,17 +228,7 @@ var HomeController = function($scope) {
           });
     };
 
-    $scope.updateSearchBit = function(){
-        var search_bit_rep = 0;
-        for(distro_type in $scope.supported_oses_list){
-            for(distro in $scope.supported_oses_list[distro_type]){
-                if($('#'+$scope.textToVariableNaming(distro)).prop("checked")){
-                    search_bit_rep += $scope.supported_oses_list[distro_type][distro];
-                }
-            }
-        }
-        return search_bit_rep;
-    };
+    $scope.distroIdToVersionMap = {};
 
     $scope.setEmptyMessage = function(msg){   
         // If there is no data returned by API call to server set No result message.
@@ -326,26 +309,36 @@ var HomeController = function($scope) {
 
         $scope.selected_distros = [];
         $scope.display_column_list = [];
+        $scope.distroIdToVersionMap = {};
+        var search_bit_rep = 0;
         $('.flavor_with_version').each(function () {
             if(this.checked){
                 $scope.show_loader = true;
                 var self = {};
-                self.display_name = '';
-                self.name = this.id.split('__')[0];
-                self.display_name = this.id.split('__')[0];
-                // Hack for SLES distros
-                if (self.name == 'SUSE_Linux_Enterprise_Server'){
-                    self.version = this.id.split('__')[1];
-                    self.display_name = self.name.replace(/_/g, ' ');
-                }else{
-                    self.version = this.id.split('__')[1].replace('_','.');
-                }
                 self.package_name = encodeURIComponent($scope.package_name);
-                if(self.name == 'Ubuntu'){
-                    self.alt_name = $scope.ubuntu_mapping[this.id.split('__')[1].replace('_','.')];
+                distro_string_id = $(this).attr('id');
+                distro_reference_string_name = $(this).attr('reference_name');
+                distro_string = distro_string_id.split('__');
+                distro_reference_string = distro_reference_string_name.split('__');
+
+                self.display_name = '';
+                if(distro_reference_string.length > 0 && distro_string.length > 0){
+                    self.name = distro_reference_string[0];
+                    self.display_name = distro_reference_string[0].replace(/_/g, ' ');
+                    self.version = distro_reference_string[1];
+                    search_bit_rep += $scope.supported_oses_list[self.name][distro_reference_string_name];
+                    $scope.selected_distros.push(self);
+                    $scope.display_column_list[self.name] = self;
+                    if($scope.distroIdToVersionMap[self.name] === undefined){
+                        $scope.distroIdToVersionMap[self.name] = {};
+                    }
+                    if(distro_string.indexOf(self.name) == 0){
+                        // i.e. the name starts with given name
+                        if(distro_string.length > 0 && distro_reference_string.length > 0){
+                            $scope.distroIdToVersionMap[self.name][distro_string[1]] = distro_reference_string[1].replace(/_/g, '-');                        
+                        }
+                    }
                 }
-                $scope.selected_distros.push(self);
-                $scope.display_column_list[self.name] = self;
             }
         });
 
@@ -353,7 +346,7 @@ var HomeController = function($scope) {
             return $scope.display_column_list[key];
         });
         $scope.display_column_list = display_column_list_temp;
-        $scope.fetchDataFromUrl($scope.formatString($scope.selected_distros));
+        $scope.fetchDataFromUrl($scope.formatString($scope.selected_distros), search_bit_rep);
     };
 
     $scope.readableDistroName = function(distro_name){
@@ -361,10 +354,7 @@ var HomeController = function($scope) {
     };
 
     $scope.textToVariableNaming = function(distro_name){
-        if(!distro_name.indexOf('SUSE') == 0){
-            return distro_name.replace(/\./g, '_');
-        }
-        return distro_name;
+        return distro_name.replace(/\./g, '_');
     };
 
     $scope.getPages = function(){
@@ -388,14 +378,18 @@ var HomeController = function($scope) {
     };
 
     $scope.getDistroVersion = function(distro, supported_os_name){
-        distro_versions = distro[supported_os_name];
-        if (distro_versions && supported_os_name == 'suse_linux_enterprise_server'){
-            return distro_versions.join('/').replace(/-/g, ' ');
-        }else if (distro_versions){
-            return distro_versions.join('/');
-        }else{
-            return '';
-        }
+        bit_rep_dec = distro.bit_rep_dec;
+        selected_distros = $scope.distroIdToVersionMap[supported_os_name];
+
+        distro_version_ids = Object.keys(selected_distros).filter(function(n) {
+            return distro[supported_os_name].indexOf(selected_distros[n]) !== -1;
+        });
+
+        distro_versions = distro_version_ids.map(function(n){
+            return selected_distros[n];
+        });
+
+        return distro_versions.join('/');
     };
 
     $scope.getSelectedPage = function(){

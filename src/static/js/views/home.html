@@ -17,7 +17,7 @@
                             <input class="flavor_selection" type="checkbox" id="{{ supported_os_type }}__all" ng-checked="{{ supported_os_type }}__all" ng-click='checkAll(supported_os_type);shouldBeCheckAll($event);' />
                             <label>{{ readableDistroName(supported_os_type) }}-All</label>
                             <div ng-repeat="(os, bit_rep) in supported_oses_list[supported_os_type]">
-                                <input class="flavor_with_version" type="checkbox" id="{{ textToVariableNaming(os) }}" ng-click="shouldBeCheckAll($event);" ng-checked="{{ textToVariableNaming(os) }}" />
+                                <input class="flavor_with_version" type="checkbox" reference_name="{{ os }}" id="{{ textToVariableNaming(os) }}" ng-click="shouldBeCheckAll($event);" ng-checked="{{ textToVariableNaming(os) }}" />
                                 <label>{{ readableDistroName(os) }}</label>
                             </div>
                         </fieldset>

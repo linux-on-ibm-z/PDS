@@ -84,8 +84,8 @@ class PackageSearch:
         # Allow max page size of 50 and min page size of 10
         if page_size > 50:
             page_size = 50
-        elif page_size <= 10:
-            page_size = 10
+        elif page_size < 5:
+            page_size = 5
 
         LOGGER.debug('getPackagesFromURL: In function')
         package_name = urllib.unquote(package_name)
