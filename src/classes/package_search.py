@@ -4,11 +4,12 @@ import urllib
 import collections
 from sets import Set
 from config import DATA_FILE_LOCATION, DISABLE_PAGINATION, MAX_RECORDS_TO_CONCAT, LOGGER
-from config import DISTROS_WITH_BIT_REP
+from config import SUPPORTED_DISTROS
 
 class PackageSearch:
     package_data = {}
     supported_distros = {}
+    DISTRO_BIT_MAP = {}
     INSTANCE = None
 
     @classmethod
@@ -18,7 +19,7 @@ class PackageSearch:
         '''
         LOGGER.debug('In getDataFilePath')
         return DATA_FILE_LOCATION
-
+        
     def getSupportedDistros(self):
         LOGGER.debug('In getSupportedDistros')
         if self.supported_distros:
@@ -31,10 +32,18 @@ class PackageSearch:
         '''
         Returns list of supported OS distributions in PDS
         '''
-
         LOGGER.debug('loadSupportedDistros: In loadSupportedDistros')
 
-        return DISTROS_WITH_BIT_REP
+        bit_value = '1'
+        bitFlag = 1        
+        distroRecord = {}
+        for supportedDistroName in SUPPORTED_DISTROS.keys():
+            for distroVersion in SUPPORTED_DISTROS[supportedDistroName].keys():
+                if(not cls.DISTRO_BIT_MAP.has_key(supportedDistroName)):
+                    cls.DISTRO_BIT_MAP[supportedDistroName] = {}
+                cls.DISTRO_BIT_MAP[supportedDistroName][distroVersion] = bitFlag
+                bitFlag += bitFlag
+        return cls.DISTRO_BIT_MAP
 
     @classmethod
     def get_instance(cls):
@@ -98,7 +107,7 @@ class PackageSearch:
         package_name_ucase = actual_package_name.upper()
 
         if exact_match:
-            matches_based_on_package_name = filter(lambda s: s['packageName'] and s['packageName'] == actual_package_name, self.INSTANCE.package_data)
+            matches_based_on_package_name = filter(lambda s: s['P'] and s['P'] == actual_package_name, self.INSTANCE.package_data)
         elif ((str(package_name).startswith('*') and str(package_name).endswith('*')) or '*' not in str(package_name)):
             matches_based_on_package_name = filter(lambda s: s['S'] and package_name_ucase in s['S'], self.INSTANCE.package_data)
         elif str(package_name).endswith('*'):
@@ -108,11 +117,11 @@ class PackageSearch:
 
         LOGGER.debug('getPackagesFromURL: Search on package name : %s', len(matches_based_on_package_name))
 
-        matches_based_on_search = filter(lambda s: ((s['bit_rep_dec'] & distro_bit_search_mapping_vals) > 0), matches_based_on_package_name)
+        matches_based_on_search = filter(lambda s: ((s['B'] & distro_bit_search_mapping_vals) > 0), matches_based_on_package_name)
 
         LOGGER.debug('getPackagesFromURL: Search on bit rep : %s', len(matches_based_on_search))
 
-        matches_based_on_search = sorted(matches_based_on_search, key = lambda k:k['packageName'], reverse = reverse)
+        matches_based_on_search = sorted(matches_based_on_search, key = lambda k:k['P'], reverse = reverse)
         LOGGER.debug('getPackagesFromURL: Sorting done')
 
         if DISABLE_PAGINATION:
@@ -143,48 +152,44 @@ class PackageSearch:
         data_dir = cls.getDataFilePath()
         package_info = [];
         package_data = {};
-        for distro_file in os.listdir(data_dir):
-            if not distro_file.startswith('distros_supported') and distro_file != 'cached_data.json':
+        cachedPackage = {}
+        
+        for distroName in SUPPORTED_DISTROS.keys():
+            print distroName
+            for distroVersion in SUPPORTED_DISTROS[distroName].keys():
+                print distroVersion
+                distro_file = SUPPORTED_DISTROS[distroName][distroVersion]
+            
                 package_info = json.load(open('%s/%s' % (data_dir, distro_file)))
                 distro_file_name = distro_file                  
-                distro_info = distro_file_name.replace('_Package_List.json', '')
                 
-                distro_info = distro_info.split('_')
-                if len(distro_info) > 1:
-                    distro_name = distro_info[0]
-                    distro_version = distro_info[1:len(distro_info)]
-                    if distro_name.startswith('Suse'):
-                        distro_name = '_'.join(distro_info[0:4])
-                        distro_version = distro_info[4:len(distro_info)]
-                        distro_version = '-'.join(distro_version)
-                    else:
-                        distro_version = '.'.join(distro_version)
-
-                bit_key = '%s__%s' % (distro_name, distro_version)
-                bit_key = bit_key.replace('-', '_')
-
                 for pkg in package_info:
                     try:
                         pkg_key = pkg["packageName"] + '_' + pkg["version"]
                     except Exception as ex:
                         LOGGER.error('preparePackageData: key not found for package %s' % str(ex))
                     if not package_data.has_key(pkg_key):
-                        pkg[distro_name] = [distro_version]
-                        package_data[pkg_key] = pkg
-                        # This block means first time record creation
-                        package_data[pkg_key]['bit_rep_dec'] = DISTROS_WITH_BIT_REP[distro_name][bit_key]
+                        cachedPackage = {}
+                        cachedPackage["P"] = pkg["packageName"]
+                        cachedPackage["S"] = cachedPackage["P"].lower().upper()
+                        cachedPackage["V"] = pkg["version"]
+                        try:
+                            cachedPackage["B"] = cls.DISTRO_BIT_MAP[distroName][distroVersion]
+                        except Exception as e:
+                            print "ERRORZ " + json.dumps(cls.DISTRO_BIT_MAP)
+                            raise
+
+                        cachedPackage[distroName] = [distroVersion]
+                        package_data[pkg_key] = cachedPackage
                     else:
-                        if not package_data[pkg_key].has_key(distro_name):
-                            package_data[pkg_key][distro_name] = [distro_version]
-                            package_data[pkg_key]['bit_rep_dec'] += DISTROS_WITH_BIT_REP[distro_name][bit_key]
+                        if not package_data[pkg_key].has_key(distroName):
+                            package_data[pkg_key][distroName] = [distroVersion]
+                            package_data[pkg_key]['B'] += cls.DISTRO_BIT_MAP[distroName][distroVersion]
                         else:
-                            if distro_version not in package_data[pkg_key][distro_name]:
-                                package_data[pkg_key][distro_name].append(distro_version)
-                                package_data[pkg_key]['bit_rep_dec'] += DISTROS_WITH_BIT_REP[distro_name][bit_key]
-
-                    tempStr = str(package_data[pkg_key]['packageName'])
-                    package_data[pkg_key]['S'] = tempStr.lower().upper()
-
+                            if distroVersion not in package_data[pkg_key][distroName]:
+                                package_data[pkg_key][distroName].append(distroVersion)
+                                package_data[pkg_key]['B'] += cls.DISTRO_BIT_MAP[distroName][distroVersion]
+                                
         json_data = package_data.values()
 
         return json_data
