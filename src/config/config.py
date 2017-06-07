@@ -35,13 +35,10 @@ DISTROS_WITH_BIT_REP = {
         'Ubuntu__17.04': 0,
         'Ubuntu__16.10': 0,
         'Ubuntu__16.04': 0,
-    },
-    'Suse_Linux_Enterprise_Server': {
+    }, 'Suse_Linux_Enterprise_Server': {
         'Suse_Linux_Enterprise_Server__11_SP4': 0,
         'Suse_Linux_Enterprise_Server__12_SP1': 0,
-        'Suse_Linux_Enterprise_Server__12_SP2': 0,
-        'Suse_Linux_Enterprise_Server__SUSE_Package_Hub_12_SP1': 0,
-        'Suse_Linux_Enterprise_Server__SUSE_Package_Hub_12_SP2': 0
+        'Suse_Linux_Enterprise_Server__12_SP2': 0
     }
 }
 
