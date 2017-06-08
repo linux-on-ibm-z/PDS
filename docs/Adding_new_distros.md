@@ -8,7 +8,7 @@ _**General Notes:**_
 
  * _A directory `/<PDS_BASE>/` defined in Step 6 of [Installation](Installation.md) document._
 
-### Step 1. Create a JSON file with package data
+### Step 1: Create a JSON file with package data
 
 **The data file should be saved in folder `<DATA_FILE_LOCATION>`:**
 
@@ -57,7 +57,7 @@ The Content of the distribution data JSON file has to be in the following format
 }]
 ```
 
-### Step 2. Update the SUPPORTED_DISTROS variable in configuration file `/<PDS_BASE>/src/config/config.py`
+### Step 2: Update the SUPPORTED_DISTROS variable in configuration file `/<PDS_BASE>/src/config/config.py`
 This update in the configuration file is necessary to map the JSON files with relevent "Dispaly Name" of supported Distro and its versions.
 
 SUPPORTED_DISTROS must have following structure
@@ -92,7 +92,7 @@ SUPPORTED_DISTROS = {
 }
 ```
 
-### Step 3. Delete the cached data file `<DATA_FILE_LOCATION>/cached_data.json`
+### Step 3: Delete the cached data file `<DATA_FILE_LOCATION>/cached_data.json`
 The system needs to regenerate the cached_data after adding a new distro.  Hence delete the existing cache as follows:
 
 ```
@@ -100,4 +100,4 @@ cd <DATA_FILE_LOCATION>
 rm -f cached_data.json
 ```
 
-### Step 4. Restart the server by refering to the steps mentioned in [Installation](Installation.md) document.
+### Step 4: Restart the server by refering to the steps mentioned in [Installation](Installation.md) document.
