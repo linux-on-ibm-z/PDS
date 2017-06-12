@@ -33,7 +33,6 @@ class PackageSearch:
         if(len(cls.DISTRO_BIT_MAP.keys()) > 0):
             return cls.DISTRO_BIT_MAP
             
-        bit_value = '1'
         bitFlag = 1        
         distroRecord = {}
         for supportedDistroName in SUPPORTED_DISTROS.keys():
