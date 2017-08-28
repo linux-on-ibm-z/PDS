@@ -51,7 +51,7 @@ RUN echo $PATH
 ENV PATH=/usr/local/bin:$PATH
 RUN sh -c "echo 'export PATH=/usr/local/bin:$PATH' > /etc/profile.d/alternate_install_path.sh"
 
-# Clone httpd from git
+# Clone PDS from git
 
 RUN  cd /opt/ \
 && git clone https://github.com/linux-on-ibm-z/PDS.git \
