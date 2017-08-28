@@ -60,18 +60,18 @@ RUN  cd /opt/ \
 
 
 # Set Environmental Variables
-&& sudo sh -c "echo 'export PYTHONPATH=/opt/PDS/src/classes:/opt/PDS/src/config:$PYTHONPATH' > /etc/profile.d/pds.sh" \
+&&  sh -c "echo 'export PYTHONPATH=/opt/PDS/src/classes:/opt/PDS/src/config:$PYTHONPATH' > /etc/profile.d/pds.sh" \
 
 # Copy the apache configuration file from /opt/PDS/src/config/pds.conf into respective apache configuration folder as below
-&& sudo cp -f /opt/PDS/src/config/pds.conf /etc/apache2/sites-enabled/pds.conf \
-&& sudo mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/z-000-default.conf \
+&&  cp -f /opt/PDS/src/config/pds.conf /etc/apache2/sites-enabled/pds.conf \
+&&  mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/z-000-default.conf \
 
 #Create new user and group for apache
-&& sudo useradd apache \
-#&& sudo groupadd apache \
+&& useradd apache \
+
 
 #Set appropriate folder and file permission on /opt/PDS/ folder for apache
-&& sudo chown -R apache:apache /opt/PDS/ \
+&& chown -R apache:apache /opt/PDS/ \
 
 # Clean up cache , source data and un-used packages
 
