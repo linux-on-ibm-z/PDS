@@ -38,7 +38,7 @@ RUN apt-get update && apt-get install -y \
     python-lxml \
     apache2 \
     libapache2-mod-wsgi \
-    sudo \
+
 &&  pip install 'cryptography==1.4' \
     Flask \
     launchpadlib \
