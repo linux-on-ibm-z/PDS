@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.4.1
+### Features
+- 
+
+### Enhancements
+- Updated FAQ with new SLES distro.
+- Updated data files
+
 ## v1.4
 ### Features
 - Responsive UI - Displays well on wide range of display devices including mobile devices
