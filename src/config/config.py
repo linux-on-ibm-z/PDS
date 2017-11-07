@@ -41,7 +41,8 @@ SUPPORTED_DISTROS = {
     'SUSE Linux Enterprise Server': {
         '11 SP4': 'Suse_Linux_Enterprise_Server_11_SP4_Package_List.json',
         '12 SP1': 'Suse_Linux_Enterprise_Server_12_SP1_Package_List.json',
-        '12 SP2': 'Suse_Linux_Enterprise_Server_12_SP2_Package_List.json'
+        '12 SP2': 'Suse_Linux_Enterprise_Server_12_SP2_Package_List.json',
+        '12 SP3': 'Suse_Linux_Enterprise_Server_12_SP3_Package_List.json'
     },
     'SUSE Package Hub': {
         'SLES 12 SP1': 'SUSE_Package_Hub_SLES_12_SP1.json',
