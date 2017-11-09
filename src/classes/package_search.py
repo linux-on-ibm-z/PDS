@@ -74,7 +74,7 @@ class PackageSearch:
         cachedPackage = {}
         
         for distroName in SUPPORTED_DISTROS.keys():
-            for distroVersion in SUPPORTED_DISTROS[distroName].keys():
+            for distroVersion in sorted(SUPPORTED_DISTROS[distroName].keys()):
                 distro_file = SUPPORTED_DISTROS[distroName][distroVersion]
             
                 package_info = json.load(open('%s/%s' % (data_dir, distro_file)))
