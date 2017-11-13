@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.
 ### Enhancements
 - Updated FAQ with new SLES distro.
 - Updated data files
+- Updated SUSE Package HUB with support for Sles12-SP3
+- Removed support for Ubuntu 16.10
+- Added Support for Ubuntu 17.10
 
 ## v1.4
 ### Features
