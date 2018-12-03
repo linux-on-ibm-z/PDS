@@ -34,9 +34,6 @@ Refer https://docs.python.org/2/library/logging.html for more information.
 DEBUG_LEVEL = logging.ERROR
 
 SUPPORTED_DISTROS = {
-    'zAlpine': {
-        'zAlpine 3.7': 'Alpine_3_7_Package_List.json'
-    },
     'zUbuntu': {
         'zUbuntu 16.04': 'Ubuntu_16_04_Package_List.json',
 	'zUbuntu 17.04': 'Ubuntu_17_04_Package_List.json',
@@ -55,36 +52,6 @@ SUPPORTED_DISTROS = {
         'zSLES 12 SP2': 'SUSE_Package_Hub_SLES_12_SP2.json',
 	'zSLES 12 SP3': 'SUSE_Package_Hub_SLES_12_SP3.json'
     },
-    'zDebian': {
-         'zDebian 9.4': 'Debian_9_4_Package_List.json'
-    },
-    'zFedora': {
-         'zFedora 28':'Fedora_28_Package_List.json'
-    },
-    'zRHEL': {
-         'zRHEL 6.9': 'RHEL_6_9_Package_List.json',
-	 'zRHEL 6.10': 'RHEL_6_10_Package_List.json',
-         'zRHEL 7.1': 'RHEL_7_1_Package_List.json',
-         'zRHEL 7.2': 'RHEL_7_2_Package_List.json',
-         'zRHEL 7.3': 'RHEL_7_3_Package_List.json',
-	 'zRHEL 7.4': 'RHEL_7_4_Package_List.json',
-	 'zRHEL 7.5': 'RHEL_7_5_Package_List.json'
-    },
-    'xRHEL': {
-       'xRHEL 6.10' : 'xRHEL_6_10_Package_List.json',
-       'xRHEL 7.3' : 'xRHEL_7_3_Package_List.json',
-       'xRHEL 7.4' : 'xRHEL_7_4_Package_List.json',
-       'xRHEL 7.5' : 'xRHEL_7_5_Package_List.json'
-    },
-    'xAlpine': {
-       'xAlpine 3.8': 'xAlpine_3_8_Package_List.json'
-     },
-    'xDebian': {
-       'xDebian 9.4': 'xDebian_9_4_Package_List.json'
-       },
-    'xFedora': {
-      'xFedora 28': 'xFedora_28_Package_List.json'
-       },
      'xUbuntu' : {
 	'xUbuntu 16.04': 'xUbuntu_16_04_Package_List.json',
 	'xUbuntu 18.04': 'xUbuntu_18_04_Package_List.json'
