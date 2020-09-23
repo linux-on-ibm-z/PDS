@@ -27,23 +27,22 @@
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
-    python \
-    python-pip \
+    python3 \
+    python3-pip \
     gcc \
     git \
-    python-dev \
+    python3-dev \
     libssl-dev \
     libffi-dev \
     cron \
-    python-lxml \
+    python3-lxml \
     apache2 \
     libapache2-mod-wsgi \
 
-&&  pip install 'cryptography==1.4' \
+&&  pip3 install cryptography \
     Flask \
     launchpadlib \
-    simplejson \
-    logging
+    simplejson
 
 
 #Set Environmental Variables
@@ -54,9 +53,9 @@ RUN sh -c "echo 'export PATH=/usr/local/bin:$PATH' > /etc/profile.d/alternate_in
 # Clone PDS from git
 
 RUN  cd /opt/ \
-&& git clone https://github.com/linux-on-ibm-z/PDS.git \
+&& git clone --single-branch --branch 2to3 https://github.com/Korpics/PDS.git \
 && cd PDS \
-&& git checkout v1.4 \
+&& git checkout 2to3 \
 
 
 # Set Environmental Variables
@@ -92,4 +91,3 @@ EXPOSE 80
 CMD ["apachectl","-D", "FOREGROUND"]
 
 # End of Dockerfile
-
