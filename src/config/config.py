@@ -1,4 +1,4 @@
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import logging
 
 PDS_BASE = '/opt/PDS/'
@@ -72,9 +72,9 @@ LOGGER = logging.getLogger('PDS_SERVER')
 # In case application is hosted on server with proxy, set "enable_proxy_authentication = True" in config.py 
 # and update the proxy details
 def proxy_authentication():
-    proxy = urllib2.ProxyHandler({'http': 'http://%s:%s@%s:%s' % (proxy_user, proxy_password, proxy_server, proxy_port),
+    proxy = urllib.request.ProxyHandler({'http': 'http://%s:%s@%s:%s' % (proxy_user, proxy_password, proxy_server, proxy_port),
       'https': 'https://%s:%s@%s:%s' % (proxy_user, proxy_password, proxy_server, proxy_port)}
     )
-    auth = urllib2.HTTPBasicAuthHandler()
-    opener = urllib2.build_opener(proxy, auth, urllib2.HTTPHandler)
-    urllib2.install_opener(opener)
+    auth = urllib.request.HTTPBasicAuthHandler()
+    opener = urllib.request.build_opener(proxy, auth, urllib.request.HTTPHandler)
+    urllib.request.install_opener(opener)
