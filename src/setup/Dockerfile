@@ -39,11 +39,10 @@ RUN apt-get update && apt-get install -y \
     apache2 \
     libapache2-mod-wsgi \
 
-&&  pip3 install 'cryptography==1.4' \
+&&  pip3 install cryptography \
     Flask \
     launchpadlib \
-    simplejson \
-    logging
+    simplejson
 
 
 #Set Environmental Variables
@@ -54,7 +53,7 @@ RUN sh -c "echo 'export PATH=/usr/local/bin:$PATH' > /etc/profile.d/alternate_in
 # Clone PDS from git
 
 RUN  cd /opt/ \
-&& git clone --branch --single-branch https://github.com/Korpics/PDS.git \
+&& git clone --single-branch --branch 2to3 https://github.com/Korpics/PDS.git \
 && cd PDS \
 && git checkout 2to3 \
 
@@ -92,4 +91,3 @@ EXPOSE 80
 CMD ["apachectl","-D", "FOREGROUND"]
 
 # End of Dockerfile
-
