@@ -53,7 +53,7 @@ RUN sh -c "echo 'export PATH=/usr/local/bin:$PATH' > /etc/profile.d/alternate_in
 # Clone PDS from git
 
 RUN  cd /opt/ \
-&& git clone --single-branch --branch 2to3 https://github.com/Korpics/PDS.git \
+&& git clone https://github.com/Korpics/PDS.git \
 && cd PDS \
 && git checkout 2to3 \
 
