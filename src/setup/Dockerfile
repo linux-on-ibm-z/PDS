@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -y \
     cron \
     python3-lxml \
     apache2 \
-    libapache2-mod-wsgi \
+    libapache2-mod-wsgi-py3 \
 
 &&  pip3 install cryptography \
     Flask \
@@ -55,7 +55,6 @@ RUN sh -c "echo 'export PATH=/usr/local/bin:$PATH' > /etc/profile.d/alternate_in
 RUN  cd /opt/ \
 && git clone https://github.com/Korpics/PDS.git \
 && cd PDS \
-&& git checkout 2to3 \
 
 
 # Set Environmental Variables
