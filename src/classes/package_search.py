@@ -4,7 +4,6 @@ import urllib.request, urllib.parse, urllib.error
 import collections
 import copy 
 import math
-from sets import Set
 from config import DATA_FILE_LOCATION, DISABLE_PAGINATION, MAX_RECORDS_TO_CONCAT, LOGGER, MAX_RECORDS_TO_SEND, CACHE_SIZE
 from config import SUPPORTED_DISTROS
 
@@ -181,7 +180,7 @@ class PackageSearch:
                 LOGGER.debug('searchPackages: Find names that end with')
                 preliminary_results = [s for s in self.INSTANCE.package_data if str(s['S']).endswith(search_term_ucase) and (s['B'] & search_bit_flag) > 0]
 
-            final_results = copy.deepcopy(preliminary_results); #Deep Copy is required since we just need to remove the "S" field from returnable result set
+            final_results = copy.deepcopy(preliminary_results); #Deep Copy is required since we just need to remove the "S" field from returnable result 
             for pkg in final_results:
                 del pkg['S']
                 
