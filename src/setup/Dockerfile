@@ -53,7 +53,10 @@ RUN sh -c "echo 'export PATH=/usr/local/bin:$PATH' > /etc/profile.d/alternate_in
 # Clone PDS from git
 
 RUN  cd /opt/ \
+&& git clone https://github.com/linux-on-ibm-z/PDS.git data \
 && git clone https://github.com/Korpics/PDS.git \
+&& cp -r data/distro_data/ PDS/src/ \
+&& cp -r data/src/static/ PDS/src/ \
 && cd PDS \
 
 
