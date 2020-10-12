@@ -13,6 +13,10 @@
 # Test in the browser by using the following url:
 # http://<hostname>:<port_number>/
 # http://<hostname>:<port_number>/pds
+#
+# Or by running the provided unit-tests:
+# cd /opt/PDS/src
+# pytest tests/
 ########################################################################################
 
 # Base image
@@ -42,7 +46,8 @@ RUN apt-get update && apt-get install -y \
 &&  pip3 install cryptography \
     Flask \
     launchpadlib \
-    simplejson
+    simplejson \
+    requests
 
 
 #Set Environmental Variables
