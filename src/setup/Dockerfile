@@ -43,7 +43,7 @@ RUN apt-get update && apt-get install -y \
     apache2 \
     libapache2-mod-wsgi-py3 \
 
-&&  pip3 install cryptography \
+&&  python3 -m pip install cryptography \
     Flask \
     launchpadlib \
     simplejson \
@@ -60,9 +60,8 @@ RUN sh -c "echo 'export PATH=/usr/local/bin:$PATH' > /etc/profile.d/alternate_in
 # This was to expiriment with distro_data being fetched from a separate repository. Doesn't feel needed.
 RUN  cd /opt/ \
 # && git clone https://github.com/linux-on-ibm-z/PDS.git data \
-&& git clone https://github.com/linux-on-ibm-z/PDS.git PDS \
-# && git clone https://github.com/Korpics/PDS.git \
-# && cp -r data/distro_data/ PDS/src/ \
+&& git clone https://github.com/Korpics/PDS.git \
+# && cp -r data/src/distro_data/ PDS/src/ \
 # && cp -r data/src/static/ PDS/src/ \
 && cd PDS \
 
