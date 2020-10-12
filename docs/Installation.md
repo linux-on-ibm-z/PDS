@@ -16,8 +16,8 @@ _**NOTE:**_
 * For Ubuntu (16.04, 17.04, 17.10):
 
         sudo apt-get update
-        sudo apt-get install -y python python-pip gcc git python-dev libssl-dev libffi-dev cron python-lxml apache2 libapache2-mod-wsgi
-        sudo pip install 'cryptography==1.4' Flask launchpadlib simplejson logging
+        sudo apt-get install -y python3 python3-pip gcc git python3-dev libssl-dev libffi-dev cron python3-lxml apache2 libapache2-mod-wsgi-py3
+        sudo pips install cryptography Flask launchpadlib simplejson requests pytest
 
 * For SLES (12 SP1, 12 SP2, 12 SP3):
 
@@ -97,6 +97,9 @@ Note: In case PDS code is already checked out, do the following for latest updat
 ###  Step 5: Verify that the PDS server is up and running
 
 ```http://server_ip_or_fully_qualified_domain_name:port_number/pds```
+Or to test render with unittesting:
+```cd PDS/src/```
+```pytest tests/```
 
 _**NOTE:**_ 
 
