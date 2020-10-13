@@ -96,8 +96,9 @@ Note: In case PDS code is already checked out, do the following for latest updat
 
 ###  Step 5: Verify that the PDS server is up and running
 
-```http://server_ip_or_fully_qualified_domain_name:port_number/pds```
-Or to test render with unittesting:
+```http://server_ip_or_fully_qualified_domain_name:port_number/pds``` < br/>
+
+(Alternatively, you can check with the unittesting) < br/>
 ```cd PDS/src/```
 ```pytest tests/```
 
