@@ -57,12 +57,14 @@ ENV PATH=/usr/local/bin:$PATH
 RUN sh -c "echo 'export PATH=/usr/local/bin:$PATH' > /etc/profile.d/alternate_install_path.sh"
 
 # Clone PDS from git
-# This was to expiriment with distro_data being fetched from a separate repository. Doesn't feel needed.
-RUN  cd /opt/ \
+# Uncomment to retrieve distro_data separate from this repository, as it may have been updated.
+# RUN  cd /opt/ \
 # && git clone https://github.com/linux-on-ibm-z/PDS.git data \
-&& git clone https://github.com/Korpics/PDS.git \
-# && cp -r data/src/distro_data/ PDS/src/ \
+# && git clone https://github.com/Korpics/PDS.git \
+# && cp -r data/distro_data/ PDS/ \
 # && cp -r data/src/static/ PDS/src/ \
+RUN  cd /opt/ \
+&& git clone https://github.com/linux-on-ibm-z/PDS.git \
 && cd PDS \
 
 
