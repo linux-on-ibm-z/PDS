@@ -99,8 +99,8 @@ Note: In case PDS code is already checked out, do the following for latest updat
 ```http://server_ip_or_fully_qualified_domain_name:port_number/pds``` <br />
 
 (Alternatively, you can check with unittesting) <br />
-```cd PDS/src/``` <br />
-```pytest tests/```
+```cd PDS/src/tests``` <br />
+```pytest```
 
 _**NOTE:**_ 
 
