@@ -1,10 +1,14 @@
 import unittest
 import requests
+import os, sys
+modulepath='../config/config.py'
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(modulepath))))
+from config.config import server_host
 
 class TestFlask(unittest.TestCase):
 
     routes = ['pds','getSupportedDistros','faq']
-    base_route='http://127.0.0.1:80/'
+    base_route='http://' + server_host + ':80/'
 
     def test_web_app_running(self):
         try:
