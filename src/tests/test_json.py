@@ -1,12 +1,16 @@
 import unittest
 import requests
 import json
+import os, sys
+modulepath='../config/config.py'
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(modulepath))))
+from config.config import server_host
 
 class TestDistro(unittest.TestCase):
 
 ##GET request to route responsible for displaying provided JSON.
 ##Both the web content and JSON are retrieved, and later compared.
-    src = "http://127.0.0.1:80/getSupportedDistros"
+    src = "http://" + server_host + ":80/getSupportedDistros"
     r = requests.get(src)
     tx = r.text
     js = r.json()
