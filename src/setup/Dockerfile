@@ -15,8 +15,8 @@
 # http://<hostname>:<port_number>/pds
 #
 # Or by running the provided unit-tests:
-# cd /opt/PDS/src
-# pytest tests/
+# cd /opt/PDS/src/tests
+# pytest 
 ########################################################################################
 
 # Base image
