@@ -43,7 +43,7 @@ RUN apt-get update && apt-get install -y \
     apache2 \
     libapache2-mod-wsgi-py3 \
     
-&&  pip3 install --upgrade pip && pip3 install 'cffi==1.11.5' \
+&&  pip3 install 'cffi==1.11.5' \
     cryptography \
     Flask \
     launchpadlib \
