@@ -21,9 +21,8 @@ _**NOTE:**_
 
 * For SLES (12 SP1, 12 SP2, 12 SP3):
 
-        sudo zypper install -y python python-setuptools gcc git libffi-devel python-devel openssl openssl-devel cronie python-xml pyxml tar wget aaa_base which w3m apache2 apache2-devel apache2-worker apache2-mod_wsgi
-        sudo easy_install pip
-        sudo pip install 'cryptography==1.4' Flask launchpadlib simplejson logging
+        sudo zypper install -y python3 python3-pip python3-setuptools gcc git libffi-devel python3-devel openssl openssl-devel cronie python3-l pytestxml tar wget aaa_base which w3m apache2 apache2-devel apache2-worker apache2-mod_wsgi-python3
+        sudo pip3 install cryptography launchpadlib simplejson Flask pytest
 
 * if "/usr/local/bin" is not part of $PATH add it to the path:
 
