@@ -91,4 +91,4 @@
 {"packageName":"sles-release-POOL", "version":"12.5-1.171"},
 {"packageName":"terminfo-base", "version":"5.9-75.1"},
 {"packageName":"util-linux", "version":"2.33.2-4.18.1"},
-{"packageName":"zypper", "version":"1.13.60-21.41.3"},
+{"packageName":"zypper", "version":"1.13.60-21.41.3"}]
