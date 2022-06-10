@@ -39,7 +39,7 @@ SUPPORTED_DISTROS = {
       "Ubuntu 18.04":"Ubuntu_18_04_Package_List.json",
       "Ubuntu 20.04":"Ubuntu_20_04_Package_List.json",
       "Ubuntu 21.10":"Ubuntu_21_10_Package_List.json",
-      "Ubuntu 22.04":"Ubuntu_22_04_Package_List.json",
+      "Ubuntu 22.04":"Ubuntu_22_04_Package_List.json"
    },
    "SUSE Linux Enterprise Server":{
       "SLES 12 SP3":"Suse_Linux_Enterprise_Server_12_SP3_Package_List.json",
@@ -70,7 +70,8 @@ SUPPORTED_DISTROS = {
       "RHEL 8.2":"RHEL_8_2_Package_List.json",
       "RHEL 8.3":"RHEL_8_3_Package_List.json",
       "RHEL 8.4":"RHEL_8_4_Package_List.json",
-      "RHEL 8.5":"RHEL_8_5_Package_List.json"
+      "RHEL 8.5":"RHEL_8_5_Package_List.json",
+      "RHEL 8.6":"RHEL_8_6_Package_List.json"
    }
 }
 
