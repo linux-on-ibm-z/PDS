@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.5.43
+## Enchancements
+-- Updated Data files
+-- Added SLES 15-SP4,SUSE Package Hub 15-SP4, rhel 9.0
+
 ## v1.5.42
 ## Enchancements
 -- Updated Data files

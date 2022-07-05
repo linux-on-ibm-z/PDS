@@ -48,7 +48,8 @@ SUPPORTED_DISTROS = {
       "SLES 15":"Suse_Linux_Enterprise_Server_15_Package_List.json",
       "SLES 15 SP1":"Suse_Linux_Enterprise_Server_15_SP1_Package_List.json",
       "SLES 15 SP2":"Suse_Linux_Enterprise_Server_15_SP2_Package_List.json",
-      "SLES 15 SP3":"Suse_Linux_Enterprise_Server_15_SP3_Package_List.json"
+      "SLES 15 SP3":"Suse_Linux_Enterprise_Server_15_SP3_Package_List.json",
+      "SLES 15 SP4":"Suse_Linux_Enterprise_Server_15_SP4_Package_List.json"
    },
    "SUSE Package Hub":{
       "SLES 12 SP3":"SUSE_Package_Hub_SLES_12_SP3.json",
@@ -57,7 +58,8 @@ SUPPORTED_DISTROS = {
       "SLES 15":"SUSE_Package_Hub_SLES_15.json",
       "SLES 15 SP1":"SUSE_Package_Hub_SLES_15_SP1.json",
       "SLES 15 SP2":"SUSE_Package_Hub_SLES_15_SP2.json",
-      "SLES 15 SP3":"SUSE_Package_Hub_SLES_15_SP3.json"
+      "SLES 15 SP3":"SUSE_Package_Hub_SLES_15_SP3.json",
+      "SLES 15 SP4":"SUSE_Package_Hub_SLES_15_SP4.json"
    },
    "RHEL":{
       "RHEL 6.10":"RHEL_6_10_Package_List.json",
@@ -71,7 +73,8 @@ SUPPORTED_DISTROS = {
       "RHEL 8.3":"RHEL_8_3_Package_List.json",
       "RHEL 8.4":"RHEL_8_4_Package_List.json",
       "RHEL 8.5":"RHEL_8_5_Package_List.json",
-      "RHEL 8.6":"RHEL_8_6_Package_List.json"
+      "RHEL 8.6":"RHEL_8_6_Package_List.json",
+      "RHEL 9.0":"RHEL_9_0_Package_List.json"
    }
 }
 
