@@ -29,11 +29,11 @@
 
       <div class="input-group searchbuttons">
         <input type="text" id="searchtext" class="form-control" style="width:200px;" autocomplete="on" placeholder="Enter Package Name" ng-model="package_name" ng-keyup="searchPackagesFromText($event)" />
-        <input type="button" id="fuzzySearch" class="btn btn-small btn-primary" value="Search" title="package Name in search should be more than two characters long" ng-click="searchPackages(null, 'fuzzySearch',false);" ng-disabled="package_name.length <= 1" />
+        <input type="button" id="fuzzySearch" class="btn btn-small btn-primary" value="Search" title="package Name in search should be more than one character long" ng-click="searchPackages(null, 'fuzzySearch',false);" ng-disabled="package_name.length <= 1" />
         <a class="btn btn-small btn-info"  href="javascript:void(0);" ng-click="searchPackages(null, 'exactSearch', true);" ng-hide="package_name.length <= 0">Search Exact</a>
       </div>
       <div class="h6">         
-        <summary><label id="help_text" style="padding-left:10px;">Enter the name of the package or at least three characters to enable pattern search.  Wildcard ('*') can be used either before or after the search keywords. </label></summary>
+        <summary><label id="help_text" style="padding-left:10px;">Enter the name of the package or at least two characters to enable pattern search.  Wildcard ('*') can be used either before or after the search keywords. </label></summary>
         <summary><label id="error_message" ng-model="error_message"  ng-show="error_message.length > 0" style="color:red;">{{ error_message }}</label></summary>
       </div> 
     </div>
