@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## v1.5.43
+## v1.5.44
 ## Enchancements
 -- Updated Data files
 -- Removed Ubuntu 21.10
