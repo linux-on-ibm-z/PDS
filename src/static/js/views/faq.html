@@ -15,7 +15,7 @@
         What is PDS?
       </div>
       <div class="list-group-item" ng-show="questionState(1)">
-        <p>PDS, or Package Distribution Search tool, helps you to search for available packages across OS distributions in a single user interface. Current version of PDS is v1.5.45</p>
+        <p>PDS, or Package Distribution Search tool, helps you to search for available packages across OS distributions in a single user interface. Current version of PDS is v1.5.46</p>
       </div>
       <div class="list-group-item list-group-item-info ng-class:{'active': questionState(2), 'glyphicon-minus':questionState(2), 'glyphicon-plus':!questionState(2)};"  ng-click="clickQuestion(2)"> <!--ng-class="[list-group-item, { 'active':questionState(2) } ]"-->
         Which operating systems does PDS support?
@@ -79,12 +79,12 @@
         What is the format for entering the search keywords?
       </div>
       <div class="list-group-item" ng-show="questionState(6)">
-        <p>The keyword must be three or more characters.
+        <p>The keyword must be two or more characters.
         <ul>
-           <li>To search for a package that contains the keyword anywhere in its name, enter three or more characters</li>           
-           <li>To search for a package that contains the keyword at the end of its name, enter the asterisk character, followed by three or more characters. For example, enter <b>*docker</b> to search for package names that end with the string <b>docker</b>.</li>
-           <li>To search for a package that contains the keyword at the beginning of its name, enter three or more characters followed by the asterisk character. For example, enter <b>docker*</b> to search for package names that begin with the string <b>docker</b>.</li>
-           <li>To search for package names that exactly match the keyword, enter three or more characters, and then click the <b>Search <keyword> (Exact Match)</b> hyperlink.</li>
+           <li>To search for a package that contains the keyword anywhere in its name, enter two or more characters</li>           
+           <li>To search for a package that contains the keyword at the end of its name, enter the asterisk character, followed by two or more characters. For example, enter <b>*docker</b> to search for package names that end with the string <b>docker</b>.</li>
+           <li>To search for a package that contains the keyword at the beginning of its name, enter two or more characters followed by the asterisk character. For example, enter <b>docker*</b> to search for package names that begin with the string <b>docker</b>.</li>
+           <li>To search for package names that exactly match the keyword, enter two or more characters, and then click the <b>Search <keyword> (Exact Match)</b> hyperlink.</li>
         </ul>
         </p>
       </div>
