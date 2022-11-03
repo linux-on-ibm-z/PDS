@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.5.47
+## Enchancements
+-- Updated Data files
+-- Added Ubuntu 22.10
+
 ## v1.5.46
 ## Enchancements
 -- Updated Data files
