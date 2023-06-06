@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.5.54
+## Enchancements
+-- Updated Data files
+-- Added rhel 8.8, rhel 9.2
+
 ## v1.5.53
 ## Enchancements
 -- Updated Data files
