@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.5.55
+## Enchancements
+-- Updated Data files
+-- Added SLES 15-SP5, SUSE Package Hub 15-SP5
+
 ## v1.5.54
 ## Enchancements
 -- Updated Data files
