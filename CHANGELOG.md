@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.5.56
+## Enchancements
+-- Updated Data files
+-- Removed Ubuntu 22.10
+
 ## v1.5.55
 ## Enchancements
 -- Updated Data files
