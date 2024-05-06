@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.5.65
+## Enchancements
+-- Updated Data files
+-- Added Ubuntu 24.04
+
 ## v1.5.64
 ## Enchancements
 -- Updated Data files
