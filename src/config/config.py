@@ -80,10 +80,12 @@ SUPPORTED_DISTROS = {
       "RHEL 8.7":"RHEL_8_7_Package_List.json",
       "RHEL 8.8":"RHEL_8_8_Package_List.json",
       "RHEL 8.9":"RHEL_8_9_Package_List.json",
+      "RHEL 8.10":"RHEL_8_10_Package_List.json",
       "RHEL 9.0":"RHEL_9_0_Package_List.json",
       "RHEL 9.1":"RHEL_9_1_Package_List.json",
       "RHEL 9.2":"RHEL_9_2_Package_List.json",
-      "RHEL 9.3":"RHEL_9_3_Package_List.json"
+      "RHEL 9.3":"RHEL_9_3_Package_List.json",
+      "RHEL 9.4":"RHEL_9_4_Package_List.json"
    }
 }
 
