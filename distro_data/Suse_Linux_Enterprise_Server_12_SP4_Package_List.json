@@ -678,12 +678,4 @@
 {"packageName":"zypper", "version":"1.11.42-2.25.2"},
 {"packageName":"zypper", "version":"1.11.32-8.1"},
 {"packageName":"zypper", "version":"1.11.14-1.2"},
-{"packageName":"data", "version":"no,"},
-{"packageName":"cases", "version":"to"},
-{"packageName":"is", "version":"repositories"},
-{"packageName":"verify", "version":"no"},
-{"packageName":"not", "version":"unless"},
-{"packageName":"repository", "version":"is"},
-{"packageName":"'adoptopenjdk'", "version":"of"},
-{"packageName":"'devel_languages_go12repo'", "version":"of"},
 {"packageName":"'devel_languages_go12sp4_repo'", "version":"of"}]
