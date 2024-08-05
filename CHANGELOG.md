@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.5.68
+## Enchancements
+-- Updated Data files
+-- Added SLES 15-SP6, SUSE Package Hub 15-SP6
+-- Removed Ubuntu 23.10
+
 ## v1.5.67
 ## Enchancements
 -- Updated Data files
