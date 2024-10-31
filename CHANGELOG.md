@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.5.71
+## Enchancements
+-- Updated Data files
+-- Added Ubuntu 24.10
+-- Removed rhel 6.10 
+
 ## v1.5.70
 ## Enchancements
 -- Updated Data files

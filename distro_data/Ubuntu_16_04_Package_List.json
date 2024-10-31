@@ -56673,7 +56673,7 @@
 {"packageName":"ubufox", "version":"3.4-0ubuntu0.16.04.2"},
 {"packageName":"ubufox", "version":"3.2-0ubuntu1"},
 {"packageName":"ubumirror", "version":"0.5"},
-{"packageName":"ubuntu-advantage-desktop-daemon", "version":"1.10~16.04.1"},
+{"packageName":"ubuntu-advantage-desktop-daemon", "version":"1.10.ubuntu0.16.04.1~esm1"},
 {"packageName":"ubuntu-advantage-pro", "version":"34~16.04"},
 {"packageName":"ubuntu-advantage-pro", "version":"27.5~16.04.1"},
 {"packageName":"ubuntu-advantage-tools", "version":"34~16.04"},
