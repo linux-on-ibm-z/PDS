@@ -58148,6 +58148,7 @@
 {"packageName":"wireguard-dkms", "version":"1.0.20201112-1~16.04.1"},
 {"packageName":"wireguard-tools", "version":"1.0.20200513-1~16.04.2"},
 {"packageName":"wireless-crda", "version":"1.16"},
+{"packageName":"wireless-regdb", "version":"2024.07.04-0ubuntu1~16.04.1"},
 {"packageName":"wireless-regdb", "version":"2020.11.20-0ubuntu1~16.04.2"},
 {"packageName":"wireless-regdb", "version":"2015.07.20-1ubuntu1"},
 {"packageName":"wireless-tools", "version":"30~pre9-8ubuntu1"},

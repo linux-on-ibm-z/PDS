@@ -86,7 +86,8 @@ SUPPORTED_DISTROS = {
       "RHEL 9.1":"RHEL_9_1_Package_List.json",
       "RHEL 9.2":"RHEL_9_2_Package_List.json",
       "RHEL 9.3":"RHEL_9_3_Package_List.json",
-      "RHEL 9.4":"RHEL_9_4_Package_List.json"
+      "RHEL 9.4":"RHEL_9_4_Package_List.json",
+      "RHEL 9.5":"RHEL_9_5_Package_List.json"
    }
 }
 
