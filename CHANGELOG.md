@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.6.0
+## Enhancements
+-- Added new Data files with repo-names
+-- Dropped SUSE Package Hub 12, RHEL 8.0
+-- Updated faq.html, home.html
+-- Updated config.py, package_search.py
+
 ## v1.5.75
 ## Enhancements
 -- Updated Data files
