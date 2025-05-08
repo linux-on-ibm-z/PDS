@@ -55,9 +55,6 @@ SUPPORTED_DISTROS = {
       "SLES 15 SP6":"Suse_Linux_Enterprise_Server_15_SP6_Package_List.json"
    },
    "SUSE Package Hub":{
-      "SLES 12 SP3":"SUSE_Package_Hub_SLES_12_SP3.json",
-      "SLES 12 SP4":"SUSE_Package_Hub_SLES_12_SP4.json",
-      "SLES 12 SP5":"SUSE_Package_Hub_SLES_12_SP5.json",
       "SLES 15":"SUSE_Package_Hub_SLES_15.json",
       "SLES 15 SP1":"SUSE_Package_Hub_SLES_15_SP1.json",
       "SLES 15 SP2":"SUSE_Package_Hub_SLES_15_SP2.json",
@@ -71,7 +68,6 @@ SUPPORTED_DISTROS = {
       "RHEL 7.7":"RHEL_7_7_Package_List.json",
       "RHEL 7.8":"RHEL_7_8_Package_List.json",
       "RHEL 7.9":"RHEL_7_9_Package_List.json",
-      "RHEL 8.0":"RHEL_8_Package_List.json",
       "RHEL 8.1":"RHEL_8_1_Package_List.json",
       "RHEL 8.2":"RHEL_8_2_Package_List.json",
       "RHEL 8.3":"RHEL_8_3_Package_List.json",
