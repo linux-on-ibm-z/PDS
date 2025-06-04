@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.6.1
+## Enhancements
+-- Added UB25.05
+-- Updated datafiles
+
 ## v1.6.0
 ## Enhancements
 -- Added new Data files with repo-names
