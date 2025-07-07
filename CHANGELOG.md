@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.6.2
+## Enhancements
+-- Added RHEL 9.6, suse package hub 15.7, sles 15.7
+-- Dropped Ubuntu(16.04, 18.04, 24.10), suse(15, 15.1, 15.2), sles(12.3, 12.4, 15, 15.1, 15.2), RHEL(7.6, 7.7, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7)
+-- Updated datafiles
+-- Updated Config.py, faq.html
+
 ## v1.6.1
 ## Enhancements
 -- Added UB25.05
