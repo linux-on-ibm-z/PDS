@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 ## v1.6.3
 ## Enhancements
 -- Updated Data files
+-- Added RHEL 10.0
+-- Updated config.py, faq.html
+
+## v1.6.3
+## Enhancements
+-- Updated Data files
 
 ## v1.6.2
 ## Enhancements
