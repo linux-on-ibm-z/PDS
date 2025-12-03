@@ -38,7 +38,8 @@ SUPPORTED_DISTROS = {
         "zUbuntu 20.04": "Ubuntu_20_04_Package_List.json",
         "zUbuntu 22.04": "Ubuntu_22_04_Package_List.json",
         "zUbuntu 24.04": "Ubuntu_24_04_Package_List.json",
-        "zUbuntu 25.04": "Ubuntu_25_04_Package_List.json"
+        "zUbuntu 25.04": "Ubuntu_25_04_Package_List.json",
+        "zUbuntu 25.10": "Ubuntu_25_10_Package_List.json"
     },
     "zSUSE Linux Enterprise Server": {
         "zSLES 12 SP5": "Suse_Linux_Enterprise_Server_12_SP5_Package_List.json",
@@ -74,7 +75,8 @@ SUPPORTED_DISTROS = {
         "xUbuntu 20.04": "xUbuntu_20_04_Package_List.json",
         "xUbuntu 22.04": "xUbuntu_22_04_Package_List.json",
         "xUbuntu 24.04": "xUbuntu_24_04_Package_List.json",
-        "xUbuntu 25.04": "xUbuntu_25_04_Package_List.json"
+        "xUbuntu 25.04": "xUbuntu_25_04_Package_List.json",
+        "xUbuntu 25.10": "xUbuntu_25_10_Package_List.json"
     },
     "xSUSE Linux Enterprise Server": {
         "xSLES 12 SP5": "xSuse_Linux_Enterprise_Server_12_SP5_Package_List.json",
