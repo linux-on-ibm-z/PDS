@@ -101184,6 +101184,7 @@
 {"packageName":"wsjtx-data","version":"2.1.2+repack-2build1","repo":"focal/universe"},
 {"packageName":"wsjtx-doc","version":"2.1.2+repack-2build1","repo":"focal/universe"},
 {"packageName":"wsl","version":"0.2.1-1","repo":"focal/universe"},
+{"packageName":"wsl-pro-service","version":"0.1.18~20.04.2","repo":"focal-updates/main"},
 {"packageName":"wsl-setup","version":"0.5.8~20.04","repo":"focal-updates/main"},
 {"packageName":"wslu","version":"2.3.6-0ubuntu1","repo":"focal/main"},
 {"packageName":"wsmancli","version":"2.6.0-0ubuntu1","repo":"focal/universe"},

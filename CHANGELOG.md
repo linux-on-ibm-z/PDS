@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.7.0
+## Enhancements
+-- Updated Data files
+-- Added SLES 15 SP7 16 SP0
+-- Updated config.py, faq.html
+
 ## v1.6.9
 ## Enhancements
 -- Updated Data files
