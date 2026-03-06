@@ -47,14 +47,16 @@ SUPPORTED_DISTROS = {
         "zSLES 15 SP4": "Suse_Linux_Enterprise_Server_15_SP4_Package_List.json",
         "zSLES 15 SP5": "Suse_Linux_Enterprise_Server_15_SP5_Package_List.json",
         "zSLES 15 SP6": "Suse_Linux_Enterprise_Server_15_SP6_Package_List.json",
-        "zSLES 15 SP7": "Suse_Linux_Enterprise_Server_15_SP7_Package_List.json"
+        "zSLES 15 SP7": "Suse_Linux_Enterprise_Server_15_SP7_Package_List.json",
+        "zSLES 16 SP0": "Suse_Linux_Enterprise_Server_16_SP0_Package_List.json"
     },
     "zSUSE Package Hub": {
         "zSLES 15 SP3": "SUSE_Package_Hub_SLES_15_SP3.json",
         "zSLES 15 SP4": "SUSE_Package_Hub_SLES_15_SP4.json",
         "zSLES 15 SP5": "SUSE_Package_Hub_SLES_15_SP5.json",
         "zSLES 15 SP6": "SUSE_Package_Hub_SLES_15_SP6.json",
-        "zSLES 15 SP7": "SUSE_Package_Hub_SLES_15_SP7.json"
+        "zSLES 15 SP7": "SUSE_Package_Hub_SLES_15_SP7.json",
+        "zSLES 16 SP0": "SUSE_Package_Hub_SLES_16_SP0.json"
     },
     "zRHEL": {
         "zRHEL 7.8": "RHEL_7_8_Package_List.json",
@@ -86,14 +88,16 @@ SUPPORTED_DISTROS = {
         "xSLES 15 SP4": "xSuse_Linux_Enterprise_Server_15_SP4_Package_List.json",
         "xSLES 15 SP5": "xSuse_Linux_Enterprise_Server_15_SP5_Package_List.json",
         "xSLES 15 SP6": "xSuse_Linux_Enterprise_Server_15_SP6_Package_List.json",
-        "xSLES 15 SP7": "xSuse_Linux_Enterprise_Server_15_SP7_Package_List.json"
+        "xSLES 15 SP7": "xSuse_Linux_Enterprise_Server_15_SP7_Package_List.json",
+        "xSLES 16 SP0": "xSuse_Linux_Enterprise_Server_16_SP0_Package_List.json"
     },
     "xSUSE Package Hub": {
         "xSLES 15 SP3": "xSUSE_Package_Hub_SLES_15_SP3.json",
         "xSLES 15 SP4": "xSUSE_Package_Hub_SLES_15_SP4.json",
         "xSLES 15 SP5": "xSUSE_Package_Hub_SLES_15_SP5.json",
         "xSLES 15 SP6": "xSUSE_Package_Hub_SLES_15_SP6.json",
-        "xSLES 15 SP7": "xSUSE_Package_Hub_SLES_15_SP7.json"
+        "xSLES 15 SP7": "xSUSE_Package_Hub_SLES_15_SP7.json",
+        "xSLES 16 SP0": "xSUSE_Package_Hub_SLES_16_SP0.json"
     },
     "xRHEL": {
         "xRHEL 7.8": "xRHEL_7_8_Package_List.json",
