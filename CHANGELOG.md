@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.7.1
+## Enhancements
+-- Updated Data files
+-- Dropped RHEL 7.8, 7.9
+-- Updated config.py, faq.html
+
 ## v1.7.0
 ## Enhancements
 -- Updated Data files

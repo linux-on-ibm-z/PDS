@@ -59,8 +59,6 @@ SUPPORTED_DISTROS = {
         "zSLES 16 SP0": "SUSE_Package_Hub_SLES_16_SP0.json"
     },
     "zRHEL": {
-        "zRHEL 7.8": "RHEL_7_8_Package_List.json",
-        "zRHEL 7.9": "RHEL_7_9_Package_List.json",
         "zRHEL 8.8": "RHEL_8_8_Package_List.json",
         "zRHEL 8.9": "RHEL_8_9_Package_List.json",
         "zRHEL 8.10": "RHEL_8_10_Package_List.json",
@@ -100,8 +98,6 @@ SUPPORTED_DISTROS = {
         "xSLES 16 SP0": "xSUSE_Package_Hub_SLES_16_SP0.json"
     },
     "xRHEL": {
-        "xRHEL 7.8": "xRHEL_7_8_Package_List.json",
-        "xRHEL 7.9": "xRHEL_7_9_Package_List.json",
         "xRHEL 8.8": "xRHEL_8_8_Package_List.json",
         "xRHEL 8.9": "xRHEL_8_9_Package_List.json",
         "xRHEL 8.10": "xRHEL_8_10_Package_List.json",
