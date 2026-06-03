@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.7.3
+## Enhancements
+-- Updated Data files
+-- Updated config.py, faq.html
+
 ## v1.7.2
 ## Enhancements
 -- Updated Data files
