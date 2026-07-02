@@ -71,8 +71,10 @@ SUPPORTED_DISTROS = {
         "zRHEL 9.5": "RHEL_9_5_Package_List.json",
         "zRHEL 9.6": "RHEL_9_6_Package_List.json",
         "zRHEL 9.7": "RHEL_9_7_Package_List.json",
+        "zRHEL 9.8": "RHEL_9_8_Package_List.json",
         "zRHEL 10.0": "RHEL_10_0_Package_List.json",
-        "zRHEL 10.1": "RHEL_10_1_Package_List.json"
+        "zRHEL 10.1": "RHEL_10_1_Package_List.json",
+        "zRHEL 10.2": "RHEL_10_2_Package_List.json"
     },
     "xUbuntu": {
         "xUbuntu 20.04": "xUbuntu_20_04_Package_List.json",
@@ -111,8 +113,10 @@ SUPPORTED_DISTROS = {
         "xRHEL 9.5": "xRHEL_9_5_Package_List.json",
         "xRHEL 9.6": "xRHEL_9_6_Package_List.json",
         "xRHEL 9.7": "xRHEL_9_7_Package_List.json",
+        "xRHEL 9.8": "xRHEL_9_8_Package_List.json",
         "xRHEL 10.0": "xRHEL_10_0_Package_List.json",
-        "xRHEL 10.1": "xRHEL_10_1_Package_List.json"
+        "xRHEL 10.1": "xRHEL_10_1_Package_List.json",
+        "xRHEL 10.2": "xRHEL_10_2_Package_List.json"
     }
 }
 
