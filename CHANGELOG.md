@@ -1,11 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<<<<<<< HEAD
 ## v1.7.5
 ## Enhancements
 -- Updated Data files
 -- Updated faq.html
 
+=======
+>>>>>>> upstream/master
 ## v1.7.4
 ## Enhancements
 -- Updated Data files
