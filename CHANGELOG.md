@@ -1,6 +1,17 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v1.7.5
+## Enhancements
+-- Updated Data files
+-- Updated faq.html
+
+## v1.7.4
+## Enhancements
+-- Updated Data files
+-- Added RHEL 9.8, 10.2
+-- Updated config.py, faq.html
+
 ## v1.7.3
 ## Enhancements
 -- Updated Data files
