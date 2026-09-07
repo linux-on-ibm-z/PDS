@@ -1,14 +1,17 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-<<<<<<< HEAD
+## v1.7.6
+## Enhancements
+-- Dropped unsupported distros (Ubuntu 25.x, sles 12.5, sles 15.3, 15.4, 15.5)
+-- Updated Data files
+-- Updated faq.html
+
 ## v1.7.5
 ## Enhancements
 -- Updated Data files
 -- Updated faq.html
 
-=======
->>>>>>> upstream/master
 ## v1.7.4
 ## Enhancements
 -- Updated Data files
