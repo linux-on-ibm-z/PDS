@@ -38,23 +38,14 @@ SUPPORTED_DISTROS = {
         "zUbuntu 20.04": "Ubuntu_20_04_Package_List.json",
         "zUbuntu 22.04": "Ubuntu_22_04_Package_List.json",
         "zUbuntu 24.04": "Ubuntu_24_04_Package_List.json",
-        "zUbuntu 25.04": "Ubuntu_25_04_Package_List.json",
-        "zUbuntu 25.10": "Ubuntu_25_10_Package_List.json",
         "zUbuntu 26.04": "Ubuntu_26_04_Package_List.json"
     },
     "zSUSE Linux Enterprise Server": {
-        "zSLES 12 SP5": "Suse_Linux_Enterprise_Server_12_SP5_Package_List.json",
-        "zSLES 15 SP3": "Suse_Linux_Enterprise_Server_15_SP3_Package_List.json",
-        "zSLES 15 SP4": "Suse_Linux_Enterprise_Server_15_SP4_Package_List.json",
-        "zSLES 15 SP5": "Suse_Linux_Enterprise_Server_15_SP5_Package_List.json",
         "zSLES 15 SP6": "Suse_Linux_Enterprise_Server_15_SP6_Package_List.json",
         "zSLES 15 SP7": "Suse_Linux_Enterprise_Server_15_SP7_Package_List.json",
         "zSLES 16 SP0": "Suse_Linux_Enterprise_Server_16_SP0_Package_List.json"
     },
     "zSUSE Package Hub": {
-        "zSLES 15 SP3": "SUSE_Package_Hub_SLES_15_SP3.json",
-        "zSLES 15 SP4": "SUSE_Package_Hub_SLES_15_SP4.json",
-        "zSLES 15 SP5": "SUSE_Package_Hub_SLES_15_SP5.json",
         "zSLES 15 SP6": "SUSE_Package_Hub_SLES_15_SP6.json",
         "zSLES 15 SP7": "SUSE_Package_Hub_SLES_15_SP7.json",
         "zSLES 16 SP0": "SUSE_Package_Hub_SLES_16_SP0.json"
@@ -63,12 +54,6 @@ SUPPORTED_DISTROS = {
         "zRHEL 8.8": "RHEL_8_8_Package_List.json",
         "zRHEL 8.9": "RHEL_8_9_Package_List.json",
         "zRHEL 8.10": "RHEL_8_10_Package_List.json",
-        "zRHEL 9.0": "RHEL_9_0_Package_List.json",
-        "zRHEL 9.1": "RHEL_9_1_Package_List.json",
-        "zRHEL 9.2": "RHEL_9_2_Package_List.json",
-        "zRHEL 9.3": "RHEL_9_3_Package_List.json",
-        "zRHEL 9.4": "RHEL_9_4_Package_List.json",
-        "zRHEL 9.5": "RHEL_9_5_Package_List.json",
         "zRHEL 9.6": "RHEL_9_6_Package_List.json",
         "zRHEL 9.7": "RHEL_9_7_Package_List.json",
         "zRHEL 9.8": "RHEL_9_8_Package_List.json",
@@ -80,23 +65,14 @@ SUPPORTED_DISTROS = {
         "xUbuntu 20.04": "xUbuntu_20_04_Package_List.json",
         "xUbuntu 22.04": "xUbuntu_22_04_Package_List.json",
         "xUbuntu 24.04": "xUbuntu_24_04_Package_List.json",
-        "xUbuntu 25.04": "xUbuntu_25_04_Package_List.json",
-        "xUbuntu 25.10": "xUbuntu_25_10_Package_List.json",
         "xUbuntu 26.04": "xUbuntu_26_04_Package_List.json"
     },
     "xSUSE Linux Enterprise Server": {
-        "xSLES 12 SP5": "xSuse_Linux_Enterprise_Server_12_SP5_Package_List.json",
-        "xSLES 15 SP3": "xSuse_Linux_Enterprise_Server_15_SP3_Package_List.json",
-        "xSLES 15 SP4": "xSuse_Linux_Enterprise_Server_15_SP4_Package_List.json",
-        "xSLES 15 SP5": "xSuse_Linux_Enterprise_Server_15_SP5_Package_List.json",
         "xSLES 15 SP6": "xSuse_Linux_Enterprise_Server_15_SP6_Package_List.json",
         "xSLES 15 SP7": "xSuse_Linux_Enterprise_Server_15_SP7_Package_List.json",
         "xSLES 16 SP0": "xSuse_Linux_Enterprise_Server_16_SP0_Package_List.json"
     },
     "xSUSE Package Hub": {
-        "xSLES 15 SP3": "xSUSE_Package_Hub_SLES_15_SP3.json",
-        "xSLES 15 SP4": "xSUSE_Package_Hub_SLES_15_SP4.json",
-        "xSLES 15 SP5": "xSUSE_Package_Hub_SLES_15_SP5.json",
         "xSLES 15 SP6": "xSUSE_Package_Hub_SLES_15_SP6.json",
         "xSLES 15 SP7": "xSUSE_Package_Hub_SLES_15_SP7.json",
         "xSLES 16 SP0": "xSUSE_Package_Hub_SLES_16_SP0.json"
@@ -105,12 +81,6 @@ SUPPORTED_DISTROS = {
         "xRHEL 8.8": "xRHEL_8_8_Package_List.json",
         "xRHEL 8.9": "xRHEL_8_9_Package_List.json",
         "xRHEL 8.10": "xRHEL_8_10_Package_List.json",
-        "xRHEL 9.0": "xRHEL_9_0_Package_List.json",
-        "xRHEL 9.1": "xRHEL_9_1_Package_List.json",
-        "xRHEL 9.2": "xRHEL_9_2_Package_List.json",
-        "xRHEL 9.3": "xRHEL_9_3_Package_List.json",
-        "xRHEL 9.4": "xRHEL_9_4_Package_List.json",
-        "xRHEL 9.5": "xRHEL_9_5_Package_List.json",
         "xRHEL 9.6": "xRHEL_9_6_Package_List.json",
         "xRHEL 9.7": "xRHEL_9_7_Package_List.json",
         "xRHEL 9.8": "xRHEL_9_8_Package_List.json",
